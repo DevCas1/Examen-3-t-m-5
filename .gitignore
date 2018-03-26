@@ -5,12 +5,12 @@
 
 # Build results
 
-[Dd]ebug/
-[Rr]elease/
-x64/
-build/
-[Bb]in/
-[Oo]bj/
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/[Dd]ebug/
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/[Rr]elease/
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/x64/
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/[Bb]uild/
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/[Bb]in/
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/[Oo]bj/
 
 # NuGet Packages
 *.nupkg
@@ -107,11 +107,11 @@ csx
 *.build.csdef
 
 # Windows Store app package directory
-AppPackages/
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/AppPackages/
 
 # Others
 *.Cache
-ClientBin/
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/ClientBin/
 [Ss]tyle[Cc]op.*
 ~$*
 *~
@@ -202,3 +202,6 @@ $RECYCLE.BIN/
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
+
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/[Ll]ibrary/
+Micro Machines HD Ultimate Super Deluxe No-DLC Version/[Tt]emp/

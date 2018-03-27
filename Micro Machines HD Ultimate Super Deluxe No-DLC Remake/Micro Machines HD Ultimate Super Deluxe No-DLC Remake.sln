@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro Machines HD Ultimate Super Deluxe No-DLC Remake", "Assembly-CSharp-firstpass.csproj", "{72BCBE7E-C4A0-4A46-F7A0-BFBC1B26A2A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro Machines HD Ultimate Super Deluxe No-DLC Remake", "Assembly-CSharp.csproj", "{011CCEB7-9670-3779-0A93-A2F01BED7C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro Machines HD Ultimate Super Deluxe No-DLC Remake", "Assembly-CSharp-Editor-firstpass.csproj", "{115538E1-AEAD-5330-C644-E321C643EAE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro Machines HD Ultimate Super Deluxe No-DLC Remake", "Assembly-CSharp-Editor.csproj", "{303ED33F-EFFF-67F8-21F5-27D1EA831C03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72BCBE7E-C4A0-4A46-F7A0-BFBC1B26A2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BCBE7E-C4A0-4A46-F7A0-BFBC1B26A2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BCBE7E-C4A0-4A46-F7A0-BFBC1B26A2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BCBE7E-C4A0-4A46-F7A0-BFBC1B26A2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011CCEB7-9670-3779-0A93-A2F01BED7C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011CCEB7-9670-3779-0A93-A2F01BED7C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011CCEB7-9670-3779-0A93-A2F01BED7C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011CCEB7-9670-3779-0A93-A2F01BED7C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{115538E1-AEAD-5330-C644-E321C643EAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115538E1-AEAD-5330-C644-E321C643EAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115538E1-AEAD-5330-C644-E321C643EAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115538E1-AEAD-5330-C644-E321C643EAE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{303ED33F-EFFF-67F8-21F5-27D1EA831C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{303ED33F-EFFF-67F8-21F5-27D1EA831C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{303ED33F-EFFF-67F8-21F5-27D1EA831C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{303ED33F-EFFF-67F8-21F5-27D1EA831C03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

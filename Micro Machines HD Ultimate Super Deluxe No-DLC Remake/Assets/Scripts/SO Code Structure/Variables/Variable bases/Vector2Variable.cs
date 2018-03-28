@@ -10,6 +10,14 @@
         public string DeveloperDescription = "";
 #endif
         public Vector2 Value;
+        public bool ResetAtAwake;
+        public Vector2 DefaultValue;
+
+        private void Awake()
+        {
+            if (!ResetAtAwake) return;
+            Value = DefaultValue;
+        }
 
         public void SetValue(Vector2 value)
         {

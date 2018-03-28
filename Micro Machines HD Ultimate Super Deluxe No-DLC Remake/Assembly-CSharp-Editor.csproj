@@ -65,6 +65,7 @@
     <Compile Include="Assets\Editor\Code Base Structure\Variables\VariableDrawers\FloatReferenceDrawer.cs" />
     <Compile Include="Assets\Editor\Code Base Structure\Variables\VariableDrawers\IntReferenceDrawer.cs" />
     <Compile Include="Assets\Editor\Code Base Structure\Variables\VariableDrawers\StringReferenceDrawer.cs" />
+    <Compile Include="Assets\Editor\Code Base Structure\Variables\VariableDrawers\Vector2ReferenceDrawer.cs" />
     <Compile Include="Assets\Editor\Code Base Structure\Variables\VariableDrawers\Vector3ReferenceDrawer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Files/School/_Examen/Handelsbekwaam 2 wp 1.5 tm 2.6/Project/Examen-3-t-m-5/Micro Machines HD Ultimate Super Deluxe No-DLC Remake/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

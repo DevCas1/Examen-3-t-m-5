@@ -3,13 +3,21 @@
     using UnityEngine;
 
     [CreateAssetMenu]
-    public class Vector3Variable : ScriptableObject
+    public sealed class Vector3Variable : ScriptableObject
     {
 #if UNITY_EDITOR
         [Multiline]
         public string DeveloperDescription = "";
 #endif
         public Vector3 Value;
+        public bool ResetAtAwake;
+        public Vector3 DefaultValue;
+
+        private void Awake()
+        {
+            if (!ResetAtAwake) return;
+            Value = DefaultValue;
+        }
 
         public void SetValue(Vector3 value)
         {

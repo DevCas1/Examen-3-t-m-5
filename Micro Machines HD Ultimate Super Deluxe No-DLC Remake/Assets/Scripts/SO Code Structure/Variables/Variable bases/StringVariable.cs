@@ -10,6 +10,14 @@
         public string DeveloperDescription = "";
 #endif
         public string Value;
+        public bool ResetAtAwake;
+        public string DefaultValue;
+
+        private void Awake()
+        {
+            if (!ResetAtAwake) return;
+            Value = DefaultValue;
+        }
 
         public void SetValue(string value)
         {

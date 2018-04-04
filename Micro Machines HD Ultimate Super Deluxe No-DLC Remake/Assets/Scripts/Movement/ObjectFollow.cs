@@ -9,7 +9,7 @@
         public bool UseInEditorOffset;
         [Tooltip("! Has no effect if UseInEditorOffset is true !")]public Vector3 FollowOffset;
         public bool SmoothFollow = true;
-        [Range(1f, 100f)] public float FollowSpeed;
+        [Range(1, 10)] public float FollowSpeed = 5;
     }
 
     [System.Serializable]

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-
-namespace Sjouke.CodeStructure.Events
+﻿namespace Sjouke.CodeStructure.Events
 {
+    using UnityEngine;
+    using System.Collections.Generic;
+
     [CreateAssetMenu]
     public class GameEvent : ScriptableObject
     {

@@ -14,6 +14,8 @@
         public enum InputAxis { X, Y, Z }
         [Tooltip("The specific axis within the Vector3 input.")]
         public InputAxis CorrespondingInputAxis;
+        [Tooltip("Specifies whether or not the input axis will go from 0 to -1, instead of 1.")]
+        public bool InvertAxis;
         [Tooltip("The Vector3Variable to reference.")]
         public Vector3Reference InputReference;
     }
@@ -23,6 +25,8 @@
     {
         [Tooltip("The axis name as written inside the Unity Input System.")]
         public string AxisName;
+        [Tooltip("Specifies whether or not the input axis will go from 0 to -1, instead of 1.")]
+        public bool InvertAxis;
         [Tooltip("The Vector3Variable to reference.")]
         public FloatReference InputReference;
     }
@@ -61,19 +65,23 @@
         {
             foreach (var axis in AxesToUpdate)
             {
+                if (axis.AxisName == string.Empty || axis.InputReference == null) continue;
                 UpdateSingleInputAxis(axis);
             }
         }
 
-        private void UpdateSingleInputAxis(SingleInputAxisObject axis)
+        private void UpdateSingleInputAxis(SingleInputAxisObject axis) => axis.InputReference.Variable.Value = GetAxis(axis.AxisName, axis.InvertAxis);
+
+        private float GetAxis(string axis, bool invert)
         {
-            axis.InputReference.Variable.Value = Input.GetAxis(axis.AxisName);
+            return !invert ? Input.GetAxis(axis) : -Input.GetAxis(axis);
         }
 
         private void CheckV3InputAxes()
         {
             foreach (var axis in V3AxesToUpdate)
             {
+                if (axis.AxisName == string.Empty || axis.InputReference == null) continue;
                 UpdateV3InputAxis(axis);
             }
         }
@@ -83,15 +91,15 @@
             switch (axis.CorrespondingInputAxis)
             {
                 case InputAxis.X:
-                    axis.InputReference.Variable.Value.x = Input.GetAxis(axis.AxisName);
+                    axis.InputReference.Variable.Value.x = GetAxis(axis.AxisName, axis.InvertAxis);
                     return;
 
                 case InputAxis.Y:
-                    axis.InputReference.Variable.Value.y = Input.GetAxis(axis.AxisName);
+                    axis.InputReference.Variable.Value.y = GetAxis(axis.AxisName, axis.InvertAxis);
                     return;
 
                 case InputAxis.Z:
-                    axis.InputReference.Variable.Value.z = Input.GetAxis(axis.AxisName);
+                    axis.InputReference.Variable.Value.z = GetAxis(axis.AxisName, axis.InvertAxis);
                     return;
             }
         }
@@ -100,6 +108,7 @@
         {
             foreach (var button in ButtonsToUpdate)
             {
+                if (button.CorrespondingGameEvent == null) continue;
                 UpdateInputButton(button);
             }
         }

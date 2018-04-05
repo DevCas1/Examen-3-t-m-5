@@ -41,6 +41,7 @@
 
         private Rigidbody _rigidbody;
         private Vector3 _velocity;
+        private float _forwardVelocity;
         private readonly RaycastHit[] _hit = new RaycastHit[1];
         private bool _isGrounded;
 
@@ -68,6 +69,7 @@
         private void Start()
         {
             GetPrivateReferences();
+            ResetPrivateValues();
         }
 
         private void GetPrivateReferences()
@@ -75,48 +77,68 @@
             _rigidbody = GetComponent<Rigidbody>();
         }
 
+        private void ResetPrivateValues()
+        {
+            _velocity = Vector3.zero;
+            _forwardVelocity = 0;
+        }
+
         private void Update()
         {
             _isGrounded = CheckForGround();
-            UpdateVelocity();
+
             if (!_isGrounded)
+            {
                 ApplyDownForce();
+                return;
+            }
+
+            CalculateNewVelocity();
+            UpdateVelocity();
             RotateCarObject();
             MoveCarObject();
         }
 
+        private void CalculateNewVelocity()
+        {
+            float input = Input.AccelerationInput.Value - Input.BrakeInput.Value;
+            if (Mathf.Abs(input) < float.Epsilon && Mathf.Abs(_forwardVelocity) > float.Epsilon)
+            {
+                if (_forwardVelocity > float.Epsilon)
+                    _forwardVelocity -= SpeedSettings.DecelerationFactor.Value;
+                else if (_forwardVelocity < float.Epsilon)
+                    _forwardVelocity += SpeedSettings.DecelerationFactor.Value;
+            }
+            if (Mathf.Abs(input) < float.Epsilon && _forwardVelocity > float.Epsilon)
+                _forwardVelocity -= -input * Input.BrakeInput.Value;
+            else if (input > float.Epsilon)
+                _forwardVelocity += input * Input.AccelerationInput.Value;
+            else if (input < -float.Epsilon)
+                _forwardVelocity -= -input * Input.BrakeInput.Value;
+        }
+
         private void UpdateVelocity()
         {
-            if (!_isGrounded) return;
-            _velocity = transform.forward * Input.AccelerationInput.Value;
-            _velocity = Vector3.ClampMagnitude(_velocity, SpeedSettings.MaxSpeed.Value);
-
-            //float forwardVelocity = Input.AccelerationInput.Value - Input.BrakeInput.Value;
-            //Vector3 tempVelocity = transform.TransformDirection(new Vector3(0, 0, forwardVelocity * (Input.BrakeInput.Value > 0.1 ? -SpeedSettings.BrakeFactor.Value
-            //                                                                                                                      : (Input.AccelerationInput.Value > 0.1 ? SpeedSettings.AccelerationFactor.Value
-            //                                                                                                                                                             : -SpeedSettings.DecelerationFactor.Value * _velocity.magnitude))));
-
-            //_velocity = Vector3.ClampMagnitude(Vector3.Lerp(_velocity,
-            //                                                tempVelocity,
-            //                                                SteeringSettings.Traction * Time.deltaTime),
-            //                                   SpeedSettings.MaxSpeed.Value);
+            _forwardVelocity = Mathf.Clamp(_forwardVelocity, -SpeedSettings.MaxSpeed.Value, SpeedSettings.MaxSpeed.Value);
+            _velocity = transform.forward * _forwardVelocity;
         }
 
         private void ApplyDownForce()
         {
-            _velocity += Vector3.down * 0.02f/** Physics.gravity.magnitude*/;
+            _velocity += Vector3.down * 0.02f;
         }
 
         private void RotateCarObject()
         {
-            if (!_isGrounded) return;
-            transform.Rotate(0, (Input.AccelerationInput.Value > 0 ? Input.SteeringInput.Value : -Input.SteeringInput.Value) * SteeringSettings.TurnSpeed.Value * (_velocity.magnitude / SpeedSettings.MaxSpeed.Value), 0);
+            transform.Rotate(0, 
+                            (_forwardVelocity > 0 ? Input.SteeringInput.Value 
+                                                  : -Input.SteeringInput.Value) * SteeringSettings.TurnSpeed.Value * (_velocity.magnitude / SpeedSettings.MaxSpeed.Value) * Time.deltaTime, 
+                             0);
         }
 
         private void MoveCarObject()
         {
-            //if (!_isGrounded) return;
-            _rigidbody.MovePosition(_rigidbody.position + _velocity/*, ForceMode.VelocityChange*/);
+            _rigidbody.MovePosition(_rigidbody.position + _velocity * Time.deltaTime);
         }
 
         private bool CheckForGround()
@@ -124,9 +146,9 @@
             return Physics.RaycastNonAlloc(Input.RaycastTransform.position, -transform.up, _hit, Input.RaycastDistance.Value, Input.GroundLayer) > 0;
         }
 
-        public void ApplyDriftTraction(bool enable)
-        {
-            if (!_isGrounded) return;
-        }
+        //public void ApplyDriftTraction(bool enable)
+        //{
+        //    if (!_isGrounded) return;
+        //}
     }
 }

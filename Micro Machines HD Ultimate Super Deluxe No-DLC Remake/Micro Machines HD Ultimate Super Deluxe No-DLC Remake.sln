@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.unity.postprocessing.Runtime", "com.unity.postprocessing.Runtime.csproj", "{43CE4B77-0ED1-06DF-D6D8-916516C0693A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro Machines HD Ultimate Super Deluxe No-DLC Remake.Plugins", "Micro Machines HD Ultimate Super Deluxe No-DLC Remake.Plugins.csproj", "{B448F4C2-729B-1524-AE88-79D3CDEB0FE4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro Machines HD Ultimate Super Deluxe No-DLC Remake", "Micro Machines HD Ultimate Super Deluxe No-DLC Remake.csproj", "{ED63CB2C-668D-5DFC-C50B-23736B7FCF25}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro Machines HD Ultimate Super Deluxe No-DLC Remake.Editor.Plugins", "Micro Machines HD Ultimate Super Deluxe No-DLC Remake.Editor.Plugins.csproj", "{FFB6F056-F881-0E75-5415-276B2612764B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.unity.postprocessing.Editor", "com.unity.postprocessing.Editor.csproj", "{8C3967EF-EA5C-CD2A-F191-ADB2A5FEC7D2}"
 EndProject
@@ -23,18 +19,10 @@ Global
 		{43CE4B77-0ED1-06DF-D6D8-916516C0693A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43CE4B77-0ED1-06DF-D6D8-916516C0693A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43CE4B77-0ED1-06DF-D6D8-916516C0693A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B448F4C2-729B-1524-AE88-79D3CDEB0FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B448F4C2-729B-1524-AE88-79D3CDEB0FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B448F4C2-729B-1524-AE88-79D3CDEB0FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B448F4C2-729B-1524-AE88-79D3CDEB0FE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED63CB2C-668D-5DFC-C50B-23736B7FCF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED63CB2C-668D-5DFC-C50B-23736B7FCF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED63CB2C-668D-5DFC-C50B-23736B7FCF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED63CB2C-668D-5DFC-C50B-23736B7FCF25}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFB6F056-F881-0E75-5415-276B2612764B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFB6F056-F881-0E75-5415-276B2612764B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFB6F056-F881-0E75-5415-276B2612764B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFB6F056-F881-0E75-5415-276B2612764B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C3967EF-EA5C-CD2A-F191-ADB2A5FEC7D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C3967EF-EA5C-CD2A-F191-ADB2A5FEC7D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C3967EF-EA5C-CD2A-F191-ADB2A5FEC7D2}.Release|Any CPU.ActiveCfg = Release|Any CPU

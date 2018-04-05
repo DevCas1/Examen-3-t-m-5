@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeveloperDescription: 
   Value: 0
-  ResetAtAwake: 0
+  ResetAtAwake: 1
   DefaultValue: 0

@@ -307,10 +307,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Micro Machines HD Ultimate Super Deluxe No-DLC Remake.Plugins.csproj">
-      <Project>{B448F4C2-729B-1524-AE88-79D3CDEB0FE4}</Project>
-      <Name>Micro Machines HD Ultimate Super Deluxe No-DLC Remake.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="com.unity.postprocessing.Editor.csproj">
       <Project>{8C3967EF-EA5C-CD2A-F191-ADB2A5FEC7D2}</Project>
       <Name>com.unity.postprocessing.Editor</Name>
@@ -401,11 +397,6 @@
     <None Include="Assets\PostProcessing\Shaders\Sampling.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\StdLib.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\xRLib.hlsl" />
-    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
-    <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
-    <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

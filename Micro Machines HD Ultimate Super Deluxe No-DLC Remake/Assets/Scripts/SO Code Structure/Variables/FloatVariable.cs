@@ -2,7 +2,7 @@
 {
     using UnityEngine;
 
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Variable/Float\tVariable")]
     public class FloatVariable : ScriptableObject
     {
 #if UNITY_EDITOR

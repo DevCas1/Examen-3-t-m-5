@@ -2,7 +2,7 @@
 {
     using UnityEngine;
 
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Variable/Vector2\tVariable")]
     public class Vector2Variable : ScriptableObject
     {
 #if UNITY_EDITOR

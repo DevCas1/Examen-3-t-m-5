@@ -2,7 +2,7 @@
 {
     using UnityEngine;
 
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Variable/Double\tVariable")]
     public class DoubleVariable : ScriptableObject
     {
 #if UNITY_EDITOR

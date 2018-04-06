@@ -284,6 +284,12 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
+      <HintPath>Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
+      <HintPath>Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/Users/suynt/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -305,12 +311,6 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/suynt/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
-      <HintPath>Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
-      <HintPath>Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="com.unity.postprocessing.Editor.csproj">
@@ -323,9 +323,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MenuButton.cs" />
+    <Compile Include="Assets\MenuButtonSelector.cs" />
+    <Compile Include="Assets\Scripts\ButtonCollectionEnabler.cs" />
     <Compile Include="Assets\Scripts\InputUpdater.cs" />
+    <Compile Include="Assets\Scripts\MouseCursor.cs" />
     <Compile Include="Assets\Scripts\Movement\ObjectFollow.cs" />
     <Compile Include="Assets\Scripts\Movement\PlayerCarController.cs" />
+    <Compile Include="Assets\Scripts\Movement\SimpleTransformer.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObject Bases\GameObjectReference.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObject Bases\Runtime Collections\ButtonRuntimeCollection.cs" />
+    <Compile Include="Assets\Scripts\SO Code Structure\Collection\RuntimeCollection.cs" />
     <Compile Include="Assets\Scripts\SO Code Structure\Events\GameEvent.cs" />
     <Compile Include="Assets\Scripts\SO Code Structure\Events\GameEventListener.cs" />
     <Compile Include="Assets\Scripts\SO Code Structure\Variables\BoolReference.cs" />

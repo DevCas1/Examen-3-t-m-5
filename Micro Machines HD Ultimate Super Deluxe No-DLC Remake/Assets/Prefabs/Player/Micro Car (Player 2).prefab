@@ -12053,16 +12053,17 @@ MonoBehaviour:
     SteeringInput:
       UseConstant: 0
       ConstantValue: 0
-      Variable: {fileID: 11400000, guid: 580130dcd4b6f044aba8f82cc88cf7c8, type: 2}
+      Variable: {fileID: 11400000, guid: 6ddbf88f3d4912a41855ab12bd556219, type: 2}
     AccelerationInput:
       UseConstant: 0
       ConstantValue: 0
-      Variable: {fileID: 11400000, guid: f0010a5d18ec6224089c4271f81acb42, type: 2}
+      Variable: {fileID: 11400000, guid: 1a9269d4aa7b497428b47b6f9a887e79, type: 2}
     BrakeInput:
       UseConstant: 0
       ConstantValue: 0
-      Variable: {fileID: 11400000, guid: 9392a2ec86f3b3a43af222ed6c47d97d, type: 2}
-    RaycastTransform: {fileID: 4805527440211156}
+      Variable: {fileID: 11400000, guid: 0c3dcd8a5db57894c9611408dfffa6d0, type: 2}
+    RaycastTransform: {fileID: 4706324207564018, guid: e9614e382ec03024d9162a6683b86901,
+      type: 2}
     RaycastDistance:
       UseConstant: 1
       ConstantValue: 1.51
@@ -12073,11 +12074,11 @@ MonoBehaviour:
   SpeedSettings:
     MaxSpeed:
       UseConstant: 1
-      ConstantValue: 15
+      ConstantValue: 14
       Variable: {fileID: 0}
     AccelerationFactor:
       UseConstant: 1
-      ConstantValue: 7.5
+      ConstantValue: 4
       Variable: {fileID: 0}
     DecelerationFactor:
       UseConstant: 1
@@ -12090,6 +12091,7 @@ MonoBehaviour:
   SteeringSettings:
     TurnSpeed:
       UseConstant: 1
-      ConstantValue: 175
+      ConstantValue: 200
       Variable: {fileID: 0}
     DriftTraction: 0.75
+  ResetTime: 0

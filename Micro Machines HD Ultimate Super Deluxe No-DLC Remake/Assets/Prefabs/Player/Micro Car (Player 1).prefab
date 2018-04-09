@@ -1195,7 +1195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1435091933177800
 GameObject:
   m_ObjectHideFlags: 1
@@ -2954,6 +2954,7 @@ GameObject:
   - component: {fileID: 4955897324722356}
   - component: {fileID: 54199450506738420}
   - component: {fileID: 114463234551038590}
+  - component: {fileID: 65090555306193118}
   m_Layer: 0
   m_Name: Micro Car (Player 1)
   m_TagString: Untagged
@@ -5297,8 +5298,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998734126281880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 4221178588716022}
   - {fileID: 4483093936798516}
@@ -12018,14 +12019,26 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998734126281880}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
-  m_CollisionDetection: 0
+  m_Constraints: 80
+  m_CollisionDetection: 2
+--- !u!65 &65090555306193118
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998734126281880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.1, y: 2.71, z: 10}
+  m_Center: {x: 0, y: 0, z: -0.09}
 --- !u!65 &65162340653365150
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -12073,11 +12086,11 @@ MonoBehaviour:
   SpeedSettings:
     MaxSpeed:
       UseConstant: 1
-      ConstantValue: 15
+      ConstantValue: 14
       Variable: {fileID: 0}
     AccelerationFactor:
       UseConstant: 1
-      ConstantValue: 7.5
+      ConstantValue: 4
       Variable: {fileID: 0}
     DecelerationFactor:
       UseConstant: 1
@@ -12090,6 +12103,7 @@ MonoBehaviour:
   SteeringSettings:
     TurnSpeed:
       UseConstant: 1
-      ConstantValue: 175
+      ConstantValue: 200
       Variable: {fileID: 0}
     DriftTraction: 0.75
+  ResetTime: 0

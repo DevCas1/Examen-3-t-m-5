@@ -338,7 +338,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ApplicationWrapper.cs" />
+    <Compile Include="Assets\Scripts\ApplicationWrapper.cs" />
     <Compile Include="Assets\Scripts\EventDebugger.cs" />
     <Compile Include="Assets\Scripts\Input\EventOnDelayedStart.cs" />
     <Compile Include="Assets\Scripts\Input\EventOnStart.cs" />

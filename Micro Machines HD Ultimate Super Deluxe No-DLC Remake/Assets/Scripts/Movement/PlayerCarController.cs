@@ -1,7 +1,9 @@
-﻿namespace Sjouke.Controls.Car
+﻿
+namespace Sjouke.Controls.Car
 {
     using UnityEngine;
     using CodeStructure.Variables;
+    using Input;
 
     [System.Serializable]
     public sealed class Inputs
@@ -38,12 +40,15 @@
         public Inputs Input = new Inputs();
         public SpeedSettings SpeedSettings = new SpeedSettings();
         public SteeringSettings SteeringSettings = new SteeringSettings();
+        public float ResetTime;
 
         private Rigidbody _rigidbody;
         private Vector3 _velocity;
         private float _forwardVelocity;
         private readonly RaycastHit[] _hit = new RaycastHit[1];
         private bool _isGrounded;
+
+        private float _resetTimer;
 
         private void Reset()
         {
@@ -66,6 +71,19 @@
             if (SteeringSettings.TurnSpeed.UseConstant) SteeringSettings.TurnSpeed.ConstantValue = 1;
         }
 
+        public void AssignInputSet(PlayerInputContainer set)
+        {
+            Input.SteeringInput.Variable = set.Steering;
+            Input.AccelerationInput.Variable = set.Acceleration;
+            Input.BrakeInput.Variable = set.Braking;
+        }
+
+        public void SetSteeringInput(FloatVariable value) => Input.SteeringInput.Variable = value;
+
+        public void SetAccelerationInput(FloatVariable value) => Input.AccelerationInput.Variable = value;
+
+        public void SetBrakeInput(FloatVariable value) => Input.BrakeInput.Variable = value;
+
         private void Start()
         {
             GetPrivateReferences();
@@ -81,15 +99,25 @@
         {
             _velocity = Vector3.zero;
             _forwardVelocity = 0;
+            _resetTimer = ResetTime;
         }
 
         private void Update()
         {
-            _isGrounded = CheckForGround();
+            _isGrounded = CheckForGround(Input.RaycastTransform.position, Vector3.down, Input.RaycastDistance.Value, Input.GroundLayer);
 
             if (!_isGrounded)
             {
                 ApplyDownForce();
+                if (HasResetTimeElapsed())
+                {
+                    if (CheckForGround(transform.position, Vector3.down, 10, Input.GroundLayer))
+                    {
+                        _resetTimer = Time.time + ResetTime;
+                        return;
+                    }
+                    ResetCar();
+                }
                 return;
             }
 
@@ -128,23 +156,27 @@
             _velocity += Vector3.down * 0.02f;
         }
 
+        private bool HasResetTimeElapsed() => Time.time <= _resetTimer;
+
+        private void ResetCar()
+        {
+
+        }
+
         private void RotateCarObject()
         {
-            transform.Rotate(0, 
-                            (_forwardVelocity > 0 ? Input.SteeringInput.Value 
-                                                  : -Input.SteeringInput.Value) * SteeringSettings.TurnSpeed.Value * (_velocity.magnitude / SpeedSettings.MaxSpeed.Value) * Time.deltaTime, 
+            transform.Rotate(0,
+                            (_forwardVelocity > 0 ? Input.SteeringInput.Value
+                                                  : -Input.SteeringInput.Value) * SteeringSettings.TurnSpeed.Value * (_velocity.magnitude / SpeedSettings.MaxSpeed.Value) * Time.smoothDeltaTime,
                              0);
         }
 
         private void MoveCarObject()
         {
-            _rigidbody.MovePosition(_rigidbody.position + _velocity * Time.deltaTime);
+            _rigidbody.MovePosition(_rigidbody.position + _velocity * Time.smoothDeltaTime);
         }
 
-        private bool CheckForGround()
-        {
-            return Physics.RaycastNonAlloc(Input.RaycastTransform.position, -transform.up, _hit, Input.RaycastDistance.Value, Input.GroundLayer) > 0;
-        }
+        private bool CheckForGround(Vector3 raycastPos, Vector3 dir, float raycastDistance, LayerMask layersToCheck) => Physics.RaycastNonAlloc(raycastPos, dir, _hit, raycastDistance, layersToCheck) > 0;
 
         //public void ApplyDriftTraction(bool enable)
         //{

@@ -3,7 +3,7 @@
     using UnityEngine;
     using System.Collections.Generic;
 
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "GameEvent/Game\tEvent")]
     public class GameEvent : ScriptableObject
     {
         /// <summary>The list of listeners that this event will notify if it is raised.</summary>

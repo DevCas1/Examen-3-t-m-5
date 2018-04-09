@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1345717769}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18182845, g: 0.22750165, b: 0.30741906, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000008, guid: a3dff287389bcd9449a80e822c93dd5f,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -818,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8c429e8e6281541a3c20855c1b1ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Duration: 3
+  Duration: 1
   TriggerOnComplete: 1
   OnComplete:
     m_PersistentCalls:

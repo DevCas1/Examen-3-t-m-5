@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1345717769}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18182845, g: 0.22750165, b: 0.30741906, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 1d63beb9b848acb4190c1e9e9ecd8bf3,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -138,8 +139,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1884150752}
   - {fileID: 1416869551}
+  - {fileID: 1884150752}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -853,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8c429e8e6281541a3c20855c1b1ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Duration: 3
+  Duration: 1
   TriggerOnComplete: 1
   OnComplete:
     m_PersistentCalls:
@@ -1050,7 +1051,7 @@ Transform:
   - {fileID: 871605517}
   - {fileID: 776471464}
   m_Father: {fileID: 44055349}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1505789237
 GameObject:
@@ -1158,7 +1159,7 @@ Transform:
   - {fileID: 1924227397}
   - {fileID: 45945784}
   m_Father: {fileID: 44055349}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1924227396
 GameObject:

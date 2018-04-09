@@ -1,10 +1,20 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Custom/GameObject\tReference")]
-public sealed class GameObjectReference : ScriptableObject 
+public class GameObjectReference : ScriptableObject
 {
     public GameObject Reference;
     public bool ResetAtStart = true;
 
-    private void Awake() => Reference = ResetAtStart ? null : Reference;
+    internal virtual void Awake()
+    {
+        if (ResetAtStart)
+            Reference = null;
+    }
+
+    internal virtual void OnDisable()
+    {
+        if (ResetAtStart)
+            Reference = null;
+    }
 }

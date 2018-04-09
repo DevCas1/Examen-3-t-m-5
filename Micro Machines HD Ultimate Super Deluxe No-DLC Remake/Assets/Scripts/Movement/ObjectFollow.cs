@@ -72,7 +72,7 @@
 
         private void PerformSmoothFollow()
         {
-            this.transform.position = Vector3.Lerp(transform.position, CalculateFollowPosition(), 1 - Mathf.Exp(-followSettings.FollowSpeed * Time.deltaTime));
+            this.transform.position = Vector3.Lerp(transform.position, CalculateFollowPosition(), 1 - Mathf.Exp(-followSettings.FollowSpeed * Time.smoothDeltaTime));
         }
 
         private void PerformInstantFollow()
@@ -93,7 +93,7 @@
 
         private void PerformSmoothRotation()
         {
-            this.transform.rotation = Quaternion.Slerp(transform.rotation, CalculateFollowRotation(), Time.deltaTime * rotateSettings.RotateSpeed);
+            this.transform.rotation = Quaternion.Slerp(transform.rotation, CalculateFollowRotation(), Time.smoothDeltaTime * rotateSettings.RotateSpeed);
         }
 
         private void PerformInstantRotation()

@@ -1,0 +1,1 @@
+﻿public sealed class EventDebugger : UnityEngine.MonoBehaviour { public void PrintDebugMessage() => UnityEngine.Debug.Log($"PrintDebugMessage has been called on {transform}!"); }

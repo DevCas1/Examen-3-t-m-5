@@ -1,7 +1,9 @@
-﻿namespace Sjouke.CodeStructure.RuntimeCollections
+﻿
+namespace Sjouke.CodeStructure.RuntimeCollections
 {
+    using Button;
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Runtime Collections/Button\tCollection")]
-    public sealed class ButtonRuntimeCollection : RuntimeCollection<UnityEngine.UI.Button> { }
+    public sealed class ButtonRuntimeCollection : RuntimeCollection<MenuButton> { }
 }

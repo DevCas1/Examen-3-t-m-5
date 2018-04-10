@@ -5,6 +5,8 @@
 
 # Build results
 
+[Bb]uild/
+[Bb]uilds/
 Micro Machines HD Ultimate Super Deluxe No-DLC Version/[Dd]ebug/
 Micro Machines HD Ultimate Super Deluxe No-DLC Version/[Rr]elease/
 Micro Machines HD Ultimate Super Deluxe No-DLC Version/x64/
@@ -206,5 +208,4 @@ $RECYCLE.BIN/
 Micro Machines HD Ultimate Super Deluxe No-DLC Remake/[Ll]ibrary/
 Micro Machines HD Ultimate Super Deluxe No-DLC Remake/[Tt]emp/
 Micro Machines HD Ultimate Super Deluxe No-DLC Remake/.collabignore
-[Bb]uilds
 *.rar

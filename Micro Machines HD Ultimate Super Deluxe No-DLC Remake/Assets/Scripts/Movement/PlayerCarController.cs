@@ -107,14 +107,14 @@ namespace Sjouke.Controls.Car
             if (!_isGrounded)
             {
                 ApplyDownForce();
-                if (HasResetTimeElapsed())
-                {
-                    if (!CheckForGround(transform.position, Vector3.down, 10, Input.GroundLayer))
-                    {
-                        _resetTimer = Time.time + ResetTime;
-                    }
-                    ResetCar();
-                }
+                //if (HasResetTimeElapsed())
+                //{
+                //    if (!CheckForGround(transform.position, Vector3.down, 10, Input.GroundLayer))
+                //    {
+                //        _resetTimer = Time.time + ResetTime;
+                //    }
+                //ResetCar();
+                //}
                 //LowerCarVelocity();
             }
             else
@@ -153,12 +153,12 @@ namespace Sjouke.Controls.Car
 
         private void ApplyDownForce() => _velocity += Vector3.down * SpeedSettings.DownforceFactor.Value;
 
-        private bool HasResetTimeElapsed() => Time.time <= _resetTimer;
+        //private bool HasResetTimeElapsed() => Time.time <= _resetTimer;
 
-        private void ResetCar()
-        {
-            Debug.Log("ResetCar has been called!");
-        }
+        //private void ResetCar()
+        //{
+        //    Debug.Log("ResetCar has been called!");
+        //}
 
         //private void LowerCarVelocity() =>_forwardVelocity -= SpeedSettings.DecelerationFactor.Value / 2;
 

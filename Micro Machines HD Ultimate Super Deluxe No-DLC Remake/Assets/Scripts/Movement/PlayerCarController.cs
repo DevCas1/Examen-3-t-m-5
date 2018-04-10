@@ -24,6 +24,7 @@ namespace Sjouke.Controls.Car
         public FloatReference AccelerationFactor;
         public FloatReference DecelerationFactor;
         public FloatReference BrakeFactor;
+        public FloatReference DownforceFactor;
     }
 
     [System.Serializable]
@@ -90,10 +91,7 @@ namespace Sjouke.Controls.Car
             ResetPrivateValues();
         }
 
-        private void GetPrivateReferences()
-        {
-            _rigidbody = GetComponent<Rigidbody>();
-        }
+        private void GetPrivateReferences() => _rigidbody = GetComponent<Rigidbody>();
 
         private void ResetPrivateValues()
         {
@@ -109,21 +107,23 @@ namespace Sjouke.Controls.Car
             if (!_isGrounded)
             {
                 ApplyDownForce();
-                if (HasResetTimeElapsed())
-                {
-                    if (CheckForGround(transform.position, Vector3.down, 10, Input.GroundLayer))
-                    {
-                        _resetTimer = Time.time + ResetTime;
-                        return;
-                    }
-                    ResetCar();
-                }
-                return;
+                //if (HasResetTimeElapsed())
+                //{
+                //    if (!CheckForGround(transform.position, Vector3.down, 10, Input.GroundLayer))
+                //    {
+                //        _resetTimer = Time.time + ResetTime;
+                //    }
+                //ResetCar();
+                //}
+                //LowerCarVelocity();
+            }
+            else
+            {
+                CalculateNewVelocity();
+                UpdateVelocity();
+                RotateCarObject();
             }
 
-            CalculateNewVelocity();
-            UpdateVelocity();
-            RotateCarObject();
             MoveCarObject();
         }
 
@@ -138,7 +138,7 @@ namespace Sjouke.Controls.Car
                     _forwardVelocity += SpeedSettings.DecelerationFactor.Value;
             }
             if (Mathf.Abs(input) < float.Epsilon && _forwardVelocity > float.Epsilon)
-                _forwardVelocity -= -input * Input.BrakeInput.Value;
+                _forwardVelocity -= -input * SpeedSettings.DecelerationFactor.Value;
             else if (input > float.Epsilon)
                 _forwardVelocity += input * Input.AccelerationInput.Value;
             else if (input < -float.Epsilon)
@@ -151,30 +151,25 @@ namespace Sjouke.Controls.Car
             _velocity = transform.forward * _forwardVelocity;
         }
 
-        private void ApplyDownForce()
-        {
-            _velocity += Vector3.down * 0.02f;
-        }
+        private void ApplyDownForce() => _velocity += Vector3.down * SpeedSettings.DownforceFactor.Value;
 
-        private bool HasResetTimeElapsed() => Time.time <= _resetTimer;
+        //private bool HasResetTimeElapsed() => Time.time <= _resetTimer;
 
-        private void ResetCar()
-        {
+        //private void ResetCar()
+        //{
+        //    Debug.Log("ResetCar has been called!");
+        //}
 
-        }
+        //private void LowerCarVelocity() =>_forwardVelocity -= SpeedSettings.DecelerationFactor.Value / 2;
 
-        private void RotateCarObject()
-        {
+        private void RotateCarObject() =>
             transform.Rotate(0,
                             (_forwardVelocity > 0 ? Input.SteeringInput.Value
                                                   : -Input.SteeringInput.Value) * SteeringSettings.TurnSpeed.Value * (_velocity.magnitude / SpeedSettings.MaxSpeed.Value) * Time.smoothDeltaTime,
                              0);
-        }
 
-        private void MoveCarObject()
-        {
-            _rigidbody.MovePosition(_rigidbody.position + _velocity * Time.smoothDeltaTime);
-        }
+
+        private void MoveCarObject() => _rigidbody.MovePosition(_rigidbody.position + _velocity * Time.smoothDeltaTime);
 
         private bool CheckForGround(Vector3 raycastPos, Vector3 dir, float raycastDistance, LayerMask layersToCheck) => Physics.RaycastNonAlloc(raycastPos, dir, _hit, raycastDistance, layersToCheck) > 0;
 

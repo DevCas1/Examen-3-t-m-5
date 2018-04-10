@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3336cc1541c954ea4efd5c494796ad, type: 3}
   m_Name: Player2 Input Set
   m_EditorClassIdentifier: 
-  Steering: {fileID: 11400000, guid: 580130dcd4b6f044aba8f82cc88cf7c8, type: 2}
-  Acceleration: {fileID: 11400000, guid: f0010a5d18ec6224089c4271f81acb42, type: 2}
-  Braking: {fileID: 11400000, guid: 9392a2ec86f3b3a43af222ed6c47d97d, type: 2}
+  Steering: {fileID: 0}
+  Acceleration: {fileID: 0}
+  Braking: {fileID: 0}
+  ResetAtStart: 0

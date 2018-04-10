@@ -338,7 +338,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ApplicationWrapper.cs" />
+    <Compile Include="Assets\Scripts\ApplicationWrapper.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioPlayer.cs" />
     <Compile Include="Assets\Scripts\EventDebugger.cs" />
     <Compile Include="Assets\Scripts\Input\EventOnDelayedStart.cs" />
     <Compile Include="Assets\Scripts\Input\EventOnStart.cs" />
@@ -353,6 +354,7 @@
     <Compile Include="Assets\Scripts\Movement\PlayerCarController.cs" />
     <Compile Include="Assets\Scripts\Movement\SimpleTransformer.cs" />
     <Compile Include="Assets\Scripts\PostExposureLerper.cs" />
+    <Compile Include="Assets\Scripts\ResetTrigger.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject Bases\GameObjectReference.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject Bases\Runtime Collections\ButtonRuntimeCollection.cs" />
